@@ -42,7 +42,7 @@ export function LocationCard({ location }: LocationCardProps) {
         const droughtPrediction = calculateDroughtPrediction(data);
         setPrediction(droughtPrediction);
       } catch (err) {
-        setError('Failed to load weather data');
+        setError('Nepodarilo sa načítať meteorologické údaje');
         console.error(err);
       } finally {
         setLoading(false);
@@ -80,7 +80,7 @@ export function LocationCard({ location }: LocationCardProps) {
         </CardHeader>
         <CardContent>
           <Alert variant="destructive">
-            <AlertDescription>{error || 'No data available'}</AlertDescription>
+            <AlertDescription>{error || 'Žiadne údaje nie sú k dispozícii'}</AlertDescription>
           </Alert>
         </CardContent>
       </Card>
@@ -112,14 +112,14 @@ export function LocationCard({ location }: LocationCardProps) {
           <h3 className="font-semibold text-lg mb-1">
             {getDroughtLevelLabel(prediction.level)}
           </h3>
-          <p className="text-sm opacity-80">7-day forecast analysis</p>
+          <p className="text-sm opacity-80">7-dňová analýza predpovede</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
             <Thermometer className="h-5 w-5 text-slate-600 mt-0.5" />
             <div>
-              <p className="text-xs text-slate-600 font-medium">Temperature</p>
+              <p className="text-xs text-slate-600 font-medium">Teplota</p>
               <p className="text-lg font-semibold text-slate-900">
                 {weather.current.temperature_2m.toFixed(1)}°C
               </p>
@@ -129,7 +129,7 @@ export function LocationCard({ location }: LocationCardProps) {
           <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
             <Droplets className="h-5 w-5 text-slate-600 mt-0.5" />
             <div>
-              <p className="text-xs text-slate-600 font-medium">Humidity</p>
+              <p className="text-xs text-slate-600 font-medium">Vlhkosť</p>
               <p className="text-lg font-semibold text-slate-900">
                 {weather.current.relative_humidity_2m}%
               </p>
@@ -139,7 +139,7 @@ export function LocationCard({ location }: LocationCardProps) {
           <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
             <Wind className="h-5 w-5 text-slate-600 mt-0.5" />
             <div>
-              <p className="text-xs text-slate-600 font-medium">Precipitation</p>
+              <p className="text-xs text-slate-600 font-medium">Zrážky</p>
               <p className="text-lg font-semibold text-slate-900">
                 {weather.current.precipitation.toFixed(1)} mm
               </p>
@@ -149,7 +149,7 @@ export function LocationCard({ location }: LocationCardProps) {
           <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
             <Cloud className="h-5 w-5 text-slate-600 mt-0.5" />
             <div>
-              <p className="text-xs text-slate-600 font-medium">Cloud Cover</p>
+              <p className="text-xs text-slate-600 font-medium">Oblačnosť</p>
               <p className="text-lg font-semibold text-slate-900">
                 {weather.current.cloud_cover}%
               </p>
@@ -159,23 +159,23 @@ export function LocationCard({ location }: LocationCardProps) {
 
         <div className="space-y-3 pt-2">
           <h4 className="font-semibold text-sm text-slate-700">
-            7-Day Analysis
+            7-dňová analýza
           </h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between p-2 rounded bg-slate-50">
-              <span className="text-slate-600">Avg. Precipitation</span>
+              <span className="text-slate-600">Priemerné zrážky</span>
               <span className="font-medium">
-                {prediction.factors.avgPrecipitation7Days.toFixed(2)} mm/hr
+                {prediction.factors.avgPrecipitation7Days.toFixed(2)} mm/hod
               </span>
             </div>
             <div className="flex justify-between p-2 rounded bg-slate-50">
-              <span className="text-slate-600">Avg. Humidity</span>
+              <span className="text-slate-600">Priemerná vlhkosť</span>
               <span className="font-medium">
                 {prediction.factors.avgHumidity7Days.toFixed(1)}%
               </span>
             </div>
             <div className="flex justify-between p-2 rounded bg-slate-50">
-              <span className="text-slate-600">Dry Hours (next 7 days)</span>
+              <span className="text-slate-600">Suché hodiny (nasledujúcich 7 dní)</span>
               <span className="font-medium">
                 {prediction.factors.dryDaysCount} / 168
               </span>

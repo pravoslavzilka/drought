@@ -86,14 +86,14 @@ export function getDroughtLevelColor(level: DroughtLevel): string {
 export function getDroughtLevelLabel(level: DroughtLevel): string {
   switch (level) {
     case 'severe':
-      return 'Severe Drought Risk';
+      return 'Vysoké riziko sucha';
     case 'high':
-      return 'High Drought Risk';
+      return 'Zvýšené riziko sucha';
     case 'moderate':
-      return 'Moderate Drought Risk';
+      return 'Mierne riziko sucha';
     case 'low':
-      return 'Low Drought Risk';
+      return 'Nízke riziko sucha';
     case 'minimal':
-      return 'Minimal Drought Risk';
+      return 'Minimálne riziko sucha';
   }
 }
