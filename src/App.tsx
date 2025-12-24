@@ -9,12 +9,12 @@ function App() {
         <header className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <CloudRain className="h-12 w-12 text-slate-700" />
-            <h1 className="text-5xl font-bold text-slate-900">
-              Systém predikcie sucha
-            </h1>
+            <h2 className="text-3xl font-bold text-slate-900">
+              Systém predikcie sucha v Zaježovej
+            </h2>
           </div>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Analýza rizika sucha v reálnom čase na základe aktuálnych poveternostných podmienok
+          <p className="text-md text-slate-600 max-w-2xl mx-auto">
+            Analýza rizika sucha v reálnom čase na základe aktuálnych podmienok
             a 7-dňových predpovedí
           </p>
         </header>

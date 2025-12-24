@@ -20,8 +20,7 @@ export function calculateDroughtPrediction(
   const hourlyData = weather.hourly;
 
   const avgPrecipitation7Days =
-    hourlyData.precipitation.slice(0, next7Days).reduce((a, b) => a + b, 0) /
-    next7Days;
+    hourlyData.precipitation.slice(0, next7Days).reduce((a, b) => a + b, 0) ;
 
   const avgHumidity7Days =
     hourlyData.relative_humidity_2m

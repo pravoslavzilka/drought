@@ -163,9 +163,9 @@ export function LocationCard({ location }: LocationCardProps) {
           </h4>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between p-2 rounded bg-slate-50">
-              <span className="text-slate-600">Priemerné zrážky</span>
+              <span className="text-slate-600">Celkovo zrážky</span>
               <span className="font-medium">
-                {prediction.factors.avgPrecipitation7Days.toFixed(2)} mm/hod
+                {prediction.factors.avgPrecipitation7Days.toFixed(2)} mm
               </span>
             </div>
             <div className="flex justify-between p-2 rounded bg-slate-50">
